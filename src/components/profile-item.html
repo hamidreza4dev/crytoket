@@ -1,0 +1,141 @@
+<div class="container">
+  <div class="flex divide-x divide-solid divide-gray-lighten dark:divide-opacity-10">
+    <div class="w-1/2 pr-8">
+      <div class="my-12"><img src="./assets/bid/Bid-08.jpg" alt="" class="rounded-2xl"></div>
+    </div>
+    <div class="w-1/2 pl-8 flex flex-col">
+      <div class="my-12 flex-grow flex flex-col">
+        <div class="flex flex-col flex-grow">
+          <div class="flex justify-between items-start">
+            <div>
+              <h1 class="text-heading-1 text-black-lighten dark:text-white">Abstact Smoke Red Blue</h1>
+              <div class="flex items-center mt-1 text-black-lighten dark:text-white">
+                <p>From <strong>4.5 ETH</strong></p>
+                <span class="block w-1 h-1 rounded-full mx-2 bg-primary-dark dark:bg-white"></span>
+                <p>20 of 25 available</p>
+              </div>
+            </div>
+            <div class="py-1.5 px-3 rounded-full border border-solid border-gray-lighten dark:border-opacity-10 mt-1">
+              <div class="flex items-center gap-2 text-black-lighten/70 dark:text-white/70">
+                <i class="icon icon-heart{{ status }} !text-sm"></i>
+                <span class="text-sm">{{ likes }}</span>
+              </div>
+            </div>
+          </div>
+    
+          <div class="text-black-lighten dark:text-white">
+            <p class="mb-2.5 mt-7">Creator :</p>
+            <div class="flex items-center gap-3">
+              <div><img src="./assets/avatar/Avatar-05.jpg" class="rounded-full w-12 h-12" alt=""></div>
+              <p class="text-paragraph-2 font-semibold">Mia Ayana</p>
+            </div>
+          </div>
+    
+          <div>
+            <div class="tab-navigation mt-7">
+              <div class="border-b border-solid border-gray-lighten dark:border-opacity-10">
+                <button class="tab-btn py-2.5 mr-4 pl-0 active">Details</button>
+                <button class="tab-btn py-2.5 mr-4">Offers</button>
+                <button class="tab-btn py-2.5 mr-4">History</button>
+              </div>
+    
+              <div class="py-2.5">
+                <div class="tab-item active">
+                  <p class="text-gray-darken dark:text-white/70">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book
+                  </p>
+                </div>
+    
+                <div class="tab-item">
+                  <div class="flex flex-col gap-2">
+                    <include src="./components/profile-item-user.html">
+                      {
+                        "src": "assets/avatar/Avatar-01.jpg",
+                        "name": "Mia Ayana"
+                      }
+                    </include>
+    
+                    <include src="./components/profile-item-user.html">
+                      {
+                        "src": "assets/avatar/Avatar-02.jpg",
+                        "name": "Rian Leon"
+                      }
+                    </include>
+    
+                    <include src="./components/profile-item-user.html">
+                      {
+                        "src": "assets/avatar/Avatar-03.jpg",
+                        "name": "Lady Young"
+                      }
+                    </include>
+    
+                    <include src="./components/profile-item-user.html">
+                      {
+                        "src": "assets/avatar/Avatar-04.jpg",
+                        "name": "Black glass"
+                      }
+                    </include>
+                  </div>
+                </div>
+    
+                <div class="tab-item">
+                  <div class="grid grid-cols-2 gap-2">
+                    <div class="flex justify-between bg-red-500/30 text-red-500 rounded-lg p-2">
+                      <p>4.5 ETH</p>
+                      <span><i class="icon icon-tick"></i></span>
+                    </div>
+    
+                    <div class="flex justify-between bg-green-500/30 text-green-500 rounded-lg p-2">
+                      <p>4.5 ETH</p>
+                      <span><i class="icon icon-tick"></i></span>
+                    </div>
+    
+                    <div class="flex justify-between bg-gray-500/30 text-gray-500 rounded-lg p-2">
+                      <p>4.5 ETH</p>
+                      <span><i class="icon icon-tick"></i></span>
+                    </div>
+    
+                    <div class="flex justify-between bg-red-500/30 text-red-500 rounded-lg p-2">
+                      <p>4.5 ETH</p>
+                      <span><i class="icon icon-tick"></i></span>
+                    </div>
+    
+                    <div class="flex justify-between bg-green-500/30 text-green-500 rounded-lg p-2">
+                      <p>4.5 ETH</p>
+                      <span><i class="icon icon-tick"></i></span>
+                    </div>
+                    
+                    <div class="flex justify-between bg-gray-500/30 text-gray-500 rounded-lg p-2">
+                      <p>4.5 ETH</p>
+                      <span><i class="icon icon-tick"></i></span>
+                    </div>
+    
+                    <div class="flex justify-between bg-red-500/30 text-red-500 rounded-lg p-2">
+                      <p>4.5 ETH</p>
+                      <span><i class="icon icon-tick"></i></span>
+                    </div>
+    
+                    <div class="flex justify-between bg-green-500/30 text-green-500 rounded-lg p-2">
+                      <p>4.5 ETH</p>
+                      <span><i class="icon icon-tick"></i></span>
+                    </div>
+                    
+                    <div class="flex justify-between bg-gray-500/30 text-gray-500 rounded-lg p-2">
+                      <p>4.5 ETH</p>
+                      <span><i class="icon icon-tick"></i></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+    
+          <div class="flex gap-2 mt-auto">
+            <button class="flex-grow btn btn-primary" id="openCheckoutBtn">Buy for 4.5 ETH</button>
+            <button class="flex-grow btn btn-secondary">Make Offer</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

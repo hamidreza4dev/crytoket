@@ -1,0 +1,21 @@
+<div class="animate__animated animate__bounceIn">
+  <a href="#" class="block bg-white dark:bg-black-sea shadow-xl dark:shadow-none rounded-[20px] p-3 hover:-translate-y-1 transition-transform">
+    <div>
+      <img src="{{ src }}" alt="{{ alt }}" class="rounded-[20px] w-full">
+    </div>
+    <div class="py-3">
+      <p class="text-paragraph-1 font-semibold mt-3 text-black-lighten dark:text-white">{{ name }}</p>
+      <div class="flex justify-between items-center">
+        <p class="text-paragraph-1 font-semibold text-center mt-1 text-black-lighten/70 dark:text-white/70">
+          <span class="font-semibold">{{ price }}</span>
+          <span>ETH</span>
+        </p>
+
+        <div class="flex items-center gap-2 text-black-lighten/70 dark:text-white/70">
+          <i class="icon icon-heart{{ status }} !text-sm"></i>
+          <span class="text-sm">{{ likes }}</span>
+        </div>
+      </div>
+    </div>
+  </a>
+</div>

@@ -1,0 +1,59 @@
+@font-face {
+  font-family: 'icons';
+  src: url('../fonts/icons.ttf?bee91d92dc2b4085510bb1b4fea87362') format('truetype'), url('../fonts/icons.woff?bee91d92dc2b4085510bb1b4fea87362') format('woff'),
+    url('../fonts/icons.woff2?bee91d92dc2b4085510bb1b4fea87362') format('woff2'),
+    url('../fonts/icons.eot?bee91d92dc2b4085510bb1b4fea87362#iefix') format('embedded-opentype');
+}
+
+i[class^='icon-'],
+i[class*=' icon-'] {
+  font-size: 1.5rem;
+}
+
+i[class^='icon-']:before,
+i[class*=' icon-']:before {
+  font-family: icons !important;
+  font-style: normal;
+  font-weight: normal !important;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: inherit;
+  display: flex;
+}
+
+.icon-down:before {
+  content: '\f101';
+}
+.icon-heart-fill:before {
+  content: '\f102';
+}
+.icon-heart:before {
+  content: '\f103';
+}
+.icon-image:before {
+  content: '\f104';
+}
+.icon-left-circle:before {
+  content: '\f105';
+}
+.icon-menu-fries:before {
+  content: '\f106';
+}
+.icon-moon:before {
+  content: '\f107';
+}
+.icon-right-circle:before {
+  content: '\f108';
+}
+.icon-search:before {
+  content: '\f109';
+}
+.icon-sun:before {
+  content: '\f10a';
+}
+.icon-tick:before {
+  content: '\f10b';
+}

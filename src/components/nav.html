@@ -1,0 +1,33 @@
+<nav class="border-b border-gray-lighten dark:border-opacity-10">
+  <div class="max-w-[1280px] mx-auto px-3 py-10 flex gap-4 items-center">
+    <div>
+      <img src="assets/Logo-Desktop-Light.svg" alt="" class="site-logo" data-mode="desktop">
+    </div>
+  
+    <div class="flex-grow">
+      <form action="" class="w-full">
+        <div class="relative w-full">
+          <button class="absolute left-0 top-1/2 -translate-y-1/2 translate-x-1/2"><i class="icon icon-search text-gray"></i></button>
+          <input type="text" name="searchBar" class="pl-12 text-gray text-paragraph-3 w-full" placeholder="Search Item Here">
+        </div>
+      </form>
+    </div>
+  
+    <div>
+      <ul class="flex">
+        <li class="navigation-item"><a href="./" class="text-paragraph-1 p-2 font-semibold {{ menu == 1 ? 'text-black dark:text-white before:bg-primary-dark dark:before:bg-white' : 'text-gray dark:text-white/40 before:bg-gray dark:before:bg-white/40' }}">Explore</a></li>
+        <li class="navigation-item"><a href="./profile.html" class="text-paragraph-1 p-2 font-semibold {{ menu == 2 ? 'text-black dark:text-white before:bg-primary-dark dark:before:bg-white' : 'text-gray dark:text-white/40 before:bg-gray dark:before:bg-white/40' }}">My Items</a></li>
+        <li class="navigation-item"><a href="#" class="text-paragraph-1 p-2 font-semibold {{ menu == 3 ? 'text-black dark:text-white before:bg-primary-dark dark:before:bg-white' : 'text-gray dark:text-white/40 before:bg-gray dark:before:bg-white/40' }}">Flowing</a></li>
+      </ul>
+    </div>
+  
+    <div class="flex gap-2">
+      <button class="btn btn-primary">Create</button>
+      <button class="btn btn-secondary">Connect</button>
+    </div>
+
+    <div class="animate__animated animate__heartBeat animate__infinite">
+      <button id="toggle-mode"><i class="icon icon-moon dark:text-white"></i></button>
+    </div>
+  </div>
+</nav>

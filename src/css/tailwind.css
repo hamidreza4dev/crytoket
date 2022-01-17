@@ -1,0 +1,194 @@
+/* fonts */
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+@import './icons.css';
+/* tailwind */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@layer base {
+  body {
+    font-family: 'Poppins', sans-serif;
+  }
+}
+
+@layer components {
+  /* forms */
+  [type='text'],
+  [type='email'],
+  [type='url'],
+  [type='password'],
+  [type='number'],
+  [type='date'],
+  [type='datetime-local'],
+  [type='month'],
+  [type='search'],
+  [type='tel'],
+  [type='time'],
+  [type='week'],
+  [multiple],
+  textarea,
+  select {
+    transition-property: box-shadow, background-color, border-color, color, fill, stroke, opacity, box-shadow;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+    @apply border border-gray-lighten dark:border-black-lighten focus:border-primary-violet rounded-lg ring-0 focus:ring-primary-violet/30 focus:ring-4 box-border bg-white dark:bg-black dark:text-white;
+  }
+
+  [type='checkbox'],
+  [type='radio'] {
+    transition-property: box-shadow, background-color, border-color, color, fill, stroke, opacity, box-shadow;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+    @apply border-primary-violet text-primary-violet shadow-sm focus:border-primary-violet focus:ring-primary-violet;
+  }
+
+  .toggle {
+    @apply rounded-full h-6 w-12 block relative cursor-pointer;
+  }
+
+  .toggle input {
+    @apply hidden;
+  }
+
+  .toggle span {
+    @apply bg-primary-violet rounded-full h-4 w-4 block absolute left-1 top-1 transform -m-0;
+    transition-property: left, transform, margin-left, background;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+    z-index: 2;
+  }
+
+  .toggle div {
+    content: '';
+    z-index: 1;
+    @apply w-full h-full bg-primary-violet/20 absolute top-0 left-0 rounded-full transition;
+  }
+
+  .toggle input:checked + span {
+    @apply left-full -translate-x-full -ml-1 bg-white;
+  }
+
+  .toggle input:checked ~ div {
+    @apply bg-primary-violet;
+  }
+}
+
+@layer components {
+  .container {
+    @apply max-w-[1024px] mx-auto px-3;
+  }
+
+  .btn {
+    @apply py-2.5 px-[30px] text-paragraph-2 rounded-xl focus:ring-primary-violet/30 focus:ring-4 transition duration-300 outline-0;
+  }
+
+  .btn.btn-primary {
+    @apply bg-primary-linear text-white;
+  }
+
+  .btn.btn-secondary {
+    @apply bg-transparent text-primary-violet border-[1.5px] border-primary-violet border-solid;
+  }
+
+  [class^='dark:'] {
+    @apply transition;
+  }
+
+  .swiper-button-next-custom::before,
+  .swiper-button-prev-custom::before {
+    font-family: icons !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 2.5rem;
+    display: flex;
+    @apply absolute top-1/2 -translate-y-1/2 text-black dark:text-white bg-white dark:bg-black rounded-full z-50;
+  }
+
+  .swiper-button-next-custom.swiper-button-disabled::before,
+  .swiper-button-prev-custom.swiper-button-disabled::before {
+    opacity: 0.3;
+  }
+
+  .swiper-button-prev-custom::before {
+    content: '\f105';
+    @apply left-0 -translate-x-1/2;
+  }
+
+  .swiper-button-next-custom::before {
+    content: '\f108';
+    @apply right-0 translate-x-1/2;
+  }
+}
+
+@layer components {
+  /* custom styles */
+  .navigation-item a {
+    @apply relative;
+  }
+
+  .navigation-item a::before {
+    @apply content-[''] absolute h-0.5 rounded-full bottom-0 left-0 w-0 [transition:width_150ms_ease];
+  }
+
+  .navigation-item a.text-black::after {
+    @apply content-[''] absolute h-1 w-1 rounded-full bottom-0 left-1/2 -translate-x-1/2 dark:bg-white bg-primary-dark transition-opacity;
+  }
+
+  .navigation-item a:hover::before {
+    @apply w-full;
+  }
+
+  .navigation-item a:hover::after {
+    @apply opacity-0;
+  }
+}
+
+@layer components {
+  .tab-btn {
+    @apply text-black-lighten relative dark:text-white;
+  }
+
+  .tab-btn.active {
+    @apply font-semibold;
+  }
+
+  .tab-btn.active::before {
+    @apply content-[''] absolute h-px w-full rounded-full bottom-0 left-0 bg-black-lighten dark:bg-white translate-y-px;
+  }
+
+  .tab-item {
+    @apply hidden;
+  }
+
+  .tab-item.active {
+    @apply block animate__animated animate__fadeIn;
+  }
+}
+
+@layer components {
+  .modal {
+    @apply bg-white shadow-xl p-4 pt-16 fixed pointer-events-none transform -translate-y-1/2 translate-x-1/2 scale-75 top-2/4 right-2/4 origin-center transition opacity-0 duration-500 ease-in-out rounded-lg;
+    z-index: 9999;
+  }
+
+  .modal.active {
+    @apply -translate-y-1/2 translate-x-1/2 scale-100 pointer-events-auto opacity-100;
+  }
+
+  .overlay {
+    @apply fixed top-0 right-0 h-screen w-screen bg-black-lighten/30  pointer-events-none backdrop-filter backdrop-blur-sm opacity-0 transition-opacity;
+    margin: 0 !important;
+    padding: 0 !important;
+    z-index: 9998;
+  }
+
+  .overlay.active {
+    @apply opacity-100 pointer-events-auto;
+  }
+}

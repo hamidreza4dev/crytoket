@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CryptoKet</title>
+  <!-- swiper.js styles -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.css" integrity="sha512-rVfXYRlhHtd3C4PzoBxSaKhI/uYEi0/5K69RwK/cdxQld57PC6mZ7tkutR+KD96WrXZ6E/96qYeY4CVun7a0/w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="dark:bg-primary-dark">
+  
+  <div class="overlay"></div>
+  <div class="modal p-0 w-[586px] sm:w-11/12 bg-white dark:bg-primary-dark" id="checkout">
+    <div>
+      <h1 class="text-heading-2 font-semibold py-8 border-b border-solid border-gray-lighten dark:border-opacity-10 text-center dark:text-white text-black-lighten">Checkout</h1>
+
+      <table class="text-black-lighten dark:text-white p-table-6">
+        <thead>
+          <tr>
+            <th class="w-1/2 text-left">Item</th>
+            <th class="w-1/2 text-right">Subtotal</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>
+              <div class="flex gap-3 items-center">
+                <div class="w-1/3"><img src="./assets/bid/Bid-08.jpg" class="rounded-lg" alt=""></div>
+                <div class="flex flex-col">
+                  <p class="text-paragraph-2 font-semibold">Mia Ayana</p>
+                  <p class="text-paragraph-3">Abstact Smoke Red Blue</p>
+                </div>
+              </div>
+
+              <td class="text-right"><p>4.5 <strong>ETH</strong></p></td>
+            </td>
+          </tr>
+        </tbody>
+
+        <tfoot>
+          <tr>
+            <td>Total</td>
+            <td class="text-right"><p>4.5 <strong>ETH</strong></p></td>
+          </tr>
+        </tfoot>
+      </table>
+
+      <div class="border-t border-solid border-gray-lighten dark:border-opacity-10 py-7">
+        <div class="flex gap-2 w-full max-w-[75%] mt-auto mx-auto">
+          <button class="flex-grow btn btn-primary" id="continueCheckoutBtn">Checkout</button>
+          <button class="flex-grow btn btn-secondary close-modal-btn">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal p-0 w-[586px] sm:w-11/12 bg-white dark:bg-primary-dark" id="continueCheckout">
+    <div>
+      <h1 class="text-heading-2 font-semibold py-8 border-b border-solid border-gray-lighten dark:border-opacity-10 text-center dark:text-white text-black-lighten">Payment Successful</h1>
+
+
+      <div class="py-8 space-y-4">
+        <div><img src="./assets/bid/Bid-08.jpg" alt="" class="max-w-[40%] mx-auto rounded-lg"></div>
+        <p class="max-w-[60%] text-center text-black-lighten dark:text-white mx-auto">
+          You successfully purchased <strong>Abstact Smoke Red Blue</strong> from <strong>Mia Ayana</strong>
+        </p>
+
+        <div class="flex gap-4 dark:text-white/40 justify-center">
+          <div><img class="w-5 h-5 dark:invert" src="assets/instagram.svg" alt="instagram"></div>
+          <div><img class="w-5 h-5 dark:invert" src="assets/twitter.svg" alt="twitter"></div>
+          <div><img class="w-5 h-5 dark:invert" src="assets/telegram.svg" alt="telegram"></div>
+          <div><img class="w-5 h-5 dark:invert" src="assets/discord.svg" alt="discord"></div>
+        </div>
+      </div>
+
+      <div class="border-t border-solid border-gray-lighten dark:border-opacity-10 py-7">
+        <div class="flex gap-2 w-full max-w-[75%] mt-auto mx-auto">
+          <button class="flex-grow btn btn-primary close-modal-btn">close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <include src="components/nav.html">
+    {
+      "menu": "2"
+    }
+  </include>
+  <include src="components/profile-item.html">
+    {
+      "likes": "92",
+      "status": "-fill"
+    }
+  </include>
+  <include src="components/footer.html"></include>
+
+<!-- swiper.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js" integrity="sha512-ZHauUc/vByS6JUz/Hl1o8s2kd4QJVLAbkz8clgjtbKUJT+AG1c735aMtVLJftKQYo+LD62QryvoNa+uqy+rCHQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+</html>

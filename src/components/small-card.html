@@ -1,0 +1,14 @@
+<div class="bg-white dark:border-none dark:bg-black-sea border border-gray-lighten dark:border-gray-lighten/30 border-solid rounded-[20px] p-2.5 hover:-translate-y-1 transition-transform">
+  <span class="w-8 h-8 text-sm rounded-full bg-primary-violet text-white flex items-center justify-center">{{ number }}</span>
+  <div class="relative">
+    <img src="{{ src }}" alt="Avatar-01" class="w-16 h-16 rounded-full mx-auto">
+    <div class="absolute right-[30%] top-[70%] bg-primary-green rounded-full p-1">
+      <i class="icon icon-tick !text-sm"></i>
+    </div>
+  </div>
+  <p class="text-paragraph-1 font-semibold text-center mt-3 text-black-lighten dark:text-white">{{ name }}</p>
+  <p class="text-paragraph-1 font-semibold text-center mt-1 text-black-lighten/70 dark:text-white/70">
+    <span class="font-semibold">{{ price }}</span>
+    <span>ETH</span>
+  </p>
+</div>
