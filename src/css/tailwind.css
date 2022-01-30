@@ -136,7 +136,7 @@
     @apply content-[''] absolute h-0.5 rounded-full bottom-0 left-0 w-0 [transition:width_150ms_ease];
   }
 
-  .navigation-item a.text-black::after {
+  nav .navigation-item a.text-black::after {
     @apply content-[''] absolute h-1 w-1 rounded-full bottom-0 left-1/2 -translate-x-1/2 dark:bg-white bg-primary-dark transition-opacity;
   }
 
@@ -144,7 +144,7 @@
     @apply w-full;
   }
 
-  .navigation-item a:hover::after {
+  nav .navigation-item a:hover::after {
     @apply opacity-0;
   }
 }

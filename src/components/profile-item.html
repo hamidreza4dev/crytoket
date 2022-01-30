@@ -48,82 +48,41 @@
     
                 <div class="tab-item">
                   <div class="flex flex-col gap-2">
-                    <include src="./components/profile-item-user.html">
-                      {
-                        "src": "assets/avatar/Avatar-01.jpg",
-                        "name": "Mia Ayana"
-                      }
-                    </include>
-    
-                    <include src="./components/profile-item-user.html">
-                      {
-                        "src": "assets/avatar/Avatar-02.jpg",
-                        "name": "Rian Leon"
-                      }
-                    </include>
-    
-                    <include src="./components/profile-item-user.html">
-                      {
-                        "src": "assets/avatar/Avatar-03.jpg",
-                        "name": "Lady Young"
-                      }
-                    </include>
-    
-                    <include src="./components/profile-item-user.html">
-                      {
-                        "src": "assets/avatar/Avatar-04.jpg",
-                        "name": "Black glass"
-                      }
-                    </include>
+                    <each loop='item in [
+                      {name: "Mia Ayana", num: 1},
+                      {name: "Rian Leon", num: 2},
+                      {name: "Lady Young ", num: 3},
+                      {name: "Black glass", num: 4}
+                    ]'>
+                      <div class="flex justify-between items-center p-2 odd:bg-gray-100 dark:odd:bg-gray-100/5 rounded-lg text-black-lighten dark:text-white">
+                        <div class="flex items-center gap-3">
+                          <div><img src="assets/avatar/Avatar-0{{ item.num }}.jpg" class="rounded-full w-12 h-12" alt=""></div>
+                          <div class="flex flex-col">
+                            <p class="text-paragraph-2 font-semibold">{{ item.name }}</p>
+                            <p class="text-paragraph-3">Member</p>
+                          </div>
+                        </div>
+                      
+                        <strong>4.5 ETH</strong>
+                      </div>
+                    </each>
                   </div>
                 </div>
     
                 <div class="tab-item">
                   <div class="grid grid-cols-2 gap-2">
-                    <div class="flex justify-between bg-red-500/30 text-red-500 rounded-lg p-2">
-                      <p>4.5 ETH</p>
-                      <span><i class="icon icon-tick"></i></span>
-                    </div>
-    
-                    <div class="flex justify-between bg-green-500/30 text-green-500 rounded-lg p-2">
-                      <p>4.5 ETH</p>
-                      <span><i class="icon icon-tick"></i></span>
-                    </div>
-    
-                    <div class="flex justify-between bg-gray-500/30 text-gray-500 rounded-lg p-2">
-                      <p>4.5 ETH</p>
-                      <span><i class="icon icon-tick"></i></span>
-                    </div>
-    
-                    <div class="flex justify-between bg-red-500/30 text-red-500 rounded-lg p-2">
-                      <p>4.5 ETH</p>
-                      <span><i class="icon icon-tick"></i></span>
-                    </div>
-    
-                    <div class="flex justify-between bg-green-500/30 text-green-500 rounded-lg p-2">
-                      <p>4.5 ETH</p>
-                      <span><i class="icon icon-tick"></i></span>
-                    </div>
-                    
-                    <div class="flex justify-between bg-gray-500/30 text-gray-500 rounded-lg p-2">
-                      <p>4.5 ETH</p>
-                      <span><i class="icon icon-tick"></i></span>
-                    </div>
-    
-                    <div class="flex justify-between bg-red-500/30 text-red-500 rounded-lg p-2">
-                      <p>4.5 ETH</p>
-                      <span><i class="icon icon-tick"></i></span>
-                    </div>
-    
-                    <div class="flex justify-between bg-green-500/30 text-green-500 rounded-lg p-2">
-                      <p>4.5 ETH</p>
-                      <span><i class="icon icon-tick"></i></span>
-                    </div>
-                    
-                    <div class="flex justify-between bg-gray-500/30 text-gray-500 rounded-lg p-2">
-                      <p>4.5 ETH</p>
-                      <span><i class="icon icon-tick"></i></span>
-                    </div>
+                    <each loop='item in [1,2,3]'>
+                      <each loop='item in [
+                        { bg: "bg-red-500/30", color: "text-red-500"},
+                        { bg: "bg-green-500/30", color: "text-green-500"},
+                        { bg: "bg-gray-500/30", color: "text-gray-500"}
+                      ]'>
+                        <div class="flex justify-between {{ item.bg }} {{ item.color }} rounded-lg p-2">
+                          <p>4.5 ETH</p>
+                          <span><i class="icon icon-tick"></i></span>
+                        </div>
+                      </each>
+                    </each>
                   </div>
                 </div>
               </div>

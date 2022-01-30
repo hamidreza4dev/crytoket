@@ -17,7 +17,14 @@ module.exports = {
             loader: 'posthtml-loader',
             options: {
               ident: 'posthtml',
-              plugins: [require('posthtml-include')({ root: 'src' }), require('posthtml-expressions')()],
+              plugins: [require('posthtml-include')({ root: 'src' })],
+            },
+          },
+          {
+            loader: 'posthtml-loader',
+            options: {
+              ident: 'posthtml',
+              plugins: [require('posthtml-expressions')()],
             },
           },
         ],
