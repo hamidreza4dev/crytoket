@@ -9,6 +9,12 @@
 @layer base {
   body {
     font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+  }
+
+  * {
+    -webkit-tap-highlight-color: transparent;
+    outline: 0;
   }
 }
 
@@ -117,12 +123,12 @@
 
   .swiper-button-prev-custom::before {
     content: '\f105';
-    @apply left-0 -translate-x-1/2 lg:-translate-x-1/4;
+    @apply left-0 -translate-x-1/2 lg:translate-x-2;
   }
 
   .swiper-button-next-custom::before {
     content: '\f108';
-    @apply right-0 translate-x-1/2 lg:translate-x-1/4;
+    @apply right-0 translate-x-1/2 lg:-translate-x-2;
   }
 }
 
