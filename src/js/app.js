@@ -7,11 +7,15 @@ import DesktopLogoLight from '../assets/Logo-Desktop-Light.svg';
 import MobileLogoDark from '../assets/Logo-Mobile-Dark.svg';
 import MobileLogoLight from '../assets/Logo-Mobile-Light.svg';
 
+// save state for dark mode
 let dark = false;
+
 const btnToggleMode = document.getElementById('toggle-mode');
+// toggle dark mode while btn clicks
 btnToggleMode.addEventListener('click', function () {
   const iEl = this.querySelector('i');
 
+  // "iEl" is for replacing icon src
   if (iEl.classList.contains('icon-moon')) {
     dark = true;
     toggleCheck(iEl);
@@ -23,6 +27,7 @@ btnToggleMode.addEventListener('click', function () {
   }
 });
 
+// check theme when the window laods
 window.addEventListener('load', function () {
   if (JSON.parse(localStorage.getItem('dark'))) {
     dark = true;
@@ -34,32 +39,55 @@ window.addEventListener('load', function () {
 });
 
 const siteLogo = document.querySelectorAll('.site-logo');
-function toggleCheck(iEl) {
-  if (dark) {
-    iEl.classList.replace('icon-moon', 'icon-sun');
-    document.documentElement.classList.add('dark');
+function checkLogo(desktopLogo, mobileLogo) {
+  // check if screen size is in "md"
+  if (window.matchMedia('(max-width:767px)').matches) {
+    siteLogo.forEach((item) => item.setAttribute('data-mode', 'mobile'));
+  }
+  console.log(siteLogo);
 
-    siteLogo.forEach((item) => {
-      if (item.getAttribute('data-mode') === 'desktop') {
-        item.src = DesktopLogoDark;
-      } else {
-        item.src = MobileLogoDark;
+  siteLogo.forEach((logo) => {
+    // get all children "<source>" and "<img>"
+    [...logo.children].forEach((src) => {
+      // check if element is "<img>"
+      if (src.src) {
+        if (logo.getAttribute('data-mode') === 'desktop') {
+          src.src = desktopLogo;
+        } else {
+          src.src = mobileLogo;
+        }
+      }
+      // check if element is "<source>"
+      if (src.srcset) {
+        if (logo.getAttribute('data-mode') === 'desktop') {
+          src.srcset = desktopLogo;
+        } else {
+          src.srcset = mobileLogo;
+        }
       }
     });
+  });
+}
+
+// toggleDark mode
+function toggleCheck(iEl) {
+  if (dark) {
+    // change button logo
+    iEl.classList.replace('icon-moon', 'icon-sun');
+    // toggle classList for Tailwind
+    document.documentElement.classList.add('dark');
+    // toggle logo
+    checkLogo(DesktopLogoDark, MobileLogoDark);
 
     return;
   }
 
+  // change button logo
   iEl.classList.replace('icon-sun', 'icon-moon');
+  // toggle classList for Tailwind
   document.documentElement.classList.remove('dark');
-
-  siteLogo.forEach((item) => {
-    if (item.getAttribute('data-mode') === 'desktop') {
-      item.src = DesktopLogoLight;
-    } else {
-      item.src = MobileLogoLight;
-    }
-  });
+  // toggle logo
+  checkLogo(DesktopLogoLight, MobileLogoLight);
 }
 
 /* modal */
@@ -103,11 +131,13 @@ function modal(targetModal) {
 
 // checkout modal open
 const openCheckoutBtn = document.getElementById('openCheckoutBtn');
-openCheckoutBtn.addEventListener('click', function () {
-  modal('checkout');
-});
+if (openCheckoutBtn) {
+  openCheckoutBtn.addEventListener('click', function () {
+    modal('checkout');
+  });
 
-const continueCheckoutBtn = document.getElementById('continueCheckoutBtn');
-continueCheckoutBtn.addEventListener('click', function () {
-  modal('continueCheckout');
-});
+  const continueCheckoutBtn = document.getElementById('continueCheckoutBtn');
+  continueCheckoutBtn.addEventListener('click', function () {
+    modal('continueCheckout');
+  });
+}

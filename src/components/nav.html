@@ -1,9 +1,16 @@
 <nav class="border-b border-gray-lighten dark:border-opacity-10">
   <div class="max-w-[1280px] mx-auto px-3 py-10 flex gap-4 items-center">
-    <div>
+    <!-- <a href="./">
       <img src="assets/Logo-Desktop-Light.svg" alt="" class="site-logo" data-mode="desktop">
-    </div>
-  
+    </a> -->
+    <a href="./">
+      <picture class="site-logo" data-mode="desktop">
+        <source media="(min-width:1024px)" srcset="assets/Logo-Desktop-Light.svg">
+        <source media="(max-width:1024px)" srcset="assets/Logo-Mobile-Light.svg">
+        <img src="assets/Logo-Desktop-Light.svg" alt="">
+      </picture>
+    </a>
+      
     <div class="flex-grow">
       <form action="" class="w-full">
         <div class="relative w-full">
@@ -13,7 +20,7 @@
       </form>
     </div>
   
-    <div>
+    <div class="lg:hidden">
       <ul class="flex">
         <li class="navigation-item"><a href="./" class="text-paragraph-1 p-2 font-semibold {{ menu == 1 ? 'text-black dark:text-white before:bg-primary-dark dark:before:bg-white' : 'text-gray dark:text-white/40 before:bg-gray dark:before:bg-white/40' }}">Explore</a></li>
         <li class="navigation-item"><a href="./profile.html" class="text-paragraph-1 p-2 font-semibold {{ menu == 2 ? 'text-black dark:text-white before:bg-primary-dark dark:before:bg-white' : 'text-gray dark:text-white/40 before:bg-gray dark:before:bg-white/40' }}">My Items</a></li>
@@ -21,13 +28,17 @@
       </ul>
     </div>
   
-    <div class="flex gap-2">
+    <div class="flex gap-2 lg:hidden">
       <button class="btn btn-primary">Create</button>
       <button class="btn btn-secondary">Connect</button>
     </div>
 
-    <div class="animate__animated animate__heartBeat animate__infinite">
+    <div class="animate__animated animate__heartBeat animate__infinite flex items-center md:animate-none">
       <button id="toggle-mode"><i class="icon icon-moon dark:text-white"></i></button>
     </div>
+  </div>
+
+  <div class="mobileMenu" class="bg-primary-dark">
+    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Error nihil possimus fuga, molestiae saepe reprehenderit assumenda dignissimos maiores doloribus? Fugiat eveniet distinctio ab molestiae officia. Numquam veniam esse maxime eos!
   </div>
 </nav>

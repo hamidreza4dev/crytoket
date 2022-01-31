@@ -15,7 +15,7 @@ module.exports = merge(common, {
     path: path.resolve(__dirname, 'dist'),
     assetModuleFilename: 'images/[hash][ext][query]',
   },
-  optimization: {
+  /* optimization: {
     minimizer: [
       new TerserPlugin(),
       new ImageMinimizerPlugin({
@@ -47,7 +47,7 @@ module.exports = merge(common, {
         },
       }),
     ],
-  },
+  }, */
   module: {
     rules: [
       {

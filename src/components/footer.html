@@ -1,15 +1,19 @@
 <footer>
   <div class="border-y border-solid border-gray-lighten dark:border-opacity-10 py-8">
     <div class="container">
-      <div class="flex justify-between">
-        <div class="space-y-4">
-          <div>
-            <img src="assets/Logo-Desktop-Light.svg" alt="" class="site-logo" data-mode="desktop">
-          </div>
+      <div class="flex justify-between md:grid md:grid-cols-2 md:gap-8">
+        <div class="space-y-4 col-span-full">
+          <a href="./">
+            <picture class="site-logo" data-mode="desktop">
+              <source media="(min-width:1024px)" srcset="assets/Logo-Desktop-Light.svg">
+              <source media="(max-width:1024px)" srcset="assets/Logo-Mobile-Light.svg">
+              <img src="assets/Logo-Desktop-Light.svg" alt="">
+            </picture>
+          </a>
           <p class="dark:text-white/40">Get the lastes Updates</p>
           <form action="" class="w-full">
-            <div class="w-full flex gap-0">
-              <input type="text" name="searchBar" class="text-black-lighten text-paragraph-2 flex-grow rounded-r-none" placeholder="Search Item Here">
+            <div class="w-full flex gap-0 whitespace-nowrap">
+              <input type="text" name="searchBar" class="text-black-lighten text-paragraph-2 flex-grow rounded-r-none sm:w-0" placeholder="Search Item Here">
               <button class="btn btn-primary rounded-l-none">Email Me!</i></button>
             </div>
           </form>
@@ -17,7 +21,7 @@
 
         <div>
           <h1 class="text-heading-3 font-semibold dark:text-white">CryptoKet</h1>
-          <ul class="mt-6">
+          <ul class="mt-6 md:mt-3">
             <li class="navigation-item"><a href="" class="text-black dark:text-white/40 py-2 inline-block before:bg-primary-dark dark:before:bg-white">Explore</a></li>
             <li class="navigation-item"><a href="" class="text-black dark:text-white/40 py-2 inline-block before:bg-primary-dark dark:before:bg-white">How it Works</a></li>
             <li class="navigation-item"><a href="" class="text-black dark:text-white/40 py-2 inline-block before:bg-primary-dark dark:before:bg-white">Contact Us</a></li>
@@ -26,7 +30,7 @@
 
         <div>
           <h1 class="text-heading-3 font-semibold dark:text-white">Support</h1>
-          <ul class="mt-6">
+          <ul class="mt-6 md:mt-3">
             <li class="navigation-item"><a href="" class="text-black dark:text-white/40 py-2 inline-block before:bg-primary-dark dark:before:bg-white">Help center</a></li>
             <li class="navigation-item"><a href="" class="text-black dark:text-white/40 py-2 inline-block before:bg-primary-dark dark:before:bg-white">Terms of service</a></li>
             <li class="navigation-item"><a href="" class="text-black dark:text-white/40 py-2 inline-block before:bg-primary-dark dark:before:bg-white">Legal</a></li>
@@ -38,7 +42,7 @@
   </div>
 
   <div class="container py-8">
-    <div class="flex justify-between">
+    <div class="flex justify-between sm:flex-col sm:items-center sm:gap-5">
       <p class="text-black dark:text-white">&copy; CrpytoKet, Inc. All Rights Reserved</p>
 
       <div class="flex gap-4 dark:text-white/40">

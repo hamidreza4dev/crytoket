@@ -117,12 +117,12 @@
 
   .swiper-button-prev-custom::before {
     content: '\f105';
-    @apply left-0 -translate-x-1/2;
+    @apply left-0 -translate-x-1/2 lg:-translate-x-1/4;
   }
 
   .swiper-button-next-custom::before {
     content: '\f108';
-    @apply right-0 translate-x-1/2;
+    @apply right-0 translate-x-1/2 lg:translate-x-1/4;
   }
 }
 
@@ -173,7 +173,7 @@
 
 @layer components {
   .modal {
-    @apply bg-white shadow-xl p-4 pt-16 fixed pointer-events-none transform -translate-y-1/2 translate-x-1/2 scale-75 top-2/4 right-2/4 origin-center transition opacity-0 duration-500 ease-in-out rounded-lg;
+    @apply bg-white shadow-xl p-4 pt-16 fixed pointer-events-none transform -translate-y-1/2 translate-x-1/2 scale-90 top-2/4 right-2/4 origin-center transition opacity-0 duration-500 ease-in-out rounded-lg;
     z-index: 9999;
   }
 
@@ -182,7 +182,7 @@
   }
 
   .overlay {
-    @apply fixed top-0 right-0 h-screen w-screen bg-black-lighten/30  pointer-events-none backdrop-filter backdrop-blur-sm opacity-0 transition-opacity;
+    @apply fixed top-0 right-0 h-screen w-screen bg-black-lighten/50  pointer-events-none backdrop-filter backdrop-blur-sm opacity-0 transition-opacity;
     margin: 0 !important;
     padding: 0 !important;
     z-index: 9998;
@@ -190,5 +190,68 @@
 
   .overlay.active {
     @apply opacity-100 pointer-events-auto;
+  }
+}
+
+@layer base {
+  /* ::-webkit-scrollbar {
+    background-color: #fff;
+    width: 16px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: #fff;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #adadad;
+    border-radius: 16px;
+    border: 5px solid #fff;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #848484;
+    border: 5px solid #fff;
+  }
+
+  ::-webkit-scrollbar-button {
+    display: none;
+  } */
+  /* ::-webkit-scrollbar {
+    @apply bg-primary-dark w-4;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-primary-dark;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gray-600 border-4 border-primary-dark border-solid rounded-2xl;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+  }
+
+  ::-webkit-scrollbar-button {
+    display: none;
+  } */
+
+  ::-webkit-scrollbar {
+    @apply bg-white dark:bg-primary-dark w-4;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-white dark:bg-primary-dark;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gray-400 border-white dark:bg-gray-600 border-4 dark:border-primary-dark border-solid rounded-2xl;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+  }
+
+  ::-webkit-scrollbar-button {
+    display: none;
   }
 }

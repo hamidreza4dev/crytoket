@@ -5,4 +5,18 @@ const topSellersSwiper = new Swiper('.top-sellers-swiper .swiper', {
   },
   slidesPerView: 5,
   spaceBetween: 22,
+  breakpoints: {
+    1024: {
+      slidesPerView: 4,
+    },
+    768: {
+      slidesPerView: 3,
+    },
+    680: {
+      slidesPerView: 2,
+    },
+    476: {
+      slidesPerView: 1,
+    },
+  },
 });
