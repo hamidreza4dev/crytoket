@@ -193,49 +193,36 @@
   }
 }
 
+@layer components {
+  /* accordion */
+  .accordion-btn i {
+    @apply transition-all duration-300;
+  }
+
+  .accordion-btn {
+    @apply transition-colors;
+  }
+
+  .accordion-btn.active {
+    /* @apply bg-gray-100; */
+  }
+
+  .accordion-btn .accordion-icon {
+    @apply transition-transform;
+  }
+
+  .accordion-btn.active .accordion-icon {
+    transform: rotate(-180deg);
+  }
+
+  .accordion-panel {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height ease 250ms;
+  }
+}
+
 @layer base {
-  /* ::-webkit-scrollbar {
-    background-color: #fff;
-    width: 16px;
-  }
-
-  ::-webkit-scrollbar-track {
-    background-color: #fff;
-  }
-
-  ::-webkit-scrollbar-thumb {
-    background-color: #adadad;
-    border-radius: 16px;
-    border: 5px solid #fff;
-  }
-
-  ::-webkit-scrollbar-thumb:hover {
-    background-color: #848484;
-    border: 5px solid #fff;
-  }
-
-  ::-webkit-scrollbar-button {
-    display: none;
-  } */
-  /* ::-webkit-scrollbar {
-    @apply bg-primary-dark w-4;
-  }
-
-  ::-webkit-scrollbar-track {
-    @apply bg-primary-dark;
-  }
-
-  ::-webkit-scrollbar-thumb {
-    @apply bg-gray-600 border-4 border-primary-dark border-solid rounded-2xl;
-  }
-
-  ::-webkit-scrollbar-thumb:hover {
-  }
-
-  ::-webkit-scrollbar-button {
-    display: none;
-  } */
-
   ::-webkit-scrollbar {
     @apply bg-white dark:bg-primary-dark w-4;
   }

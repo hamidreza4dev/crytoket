@@ -44,7 +44,6 @@ function checkLogo(desktopLogo, mobileLogo) {
   if (window.matchMedia('(max-width:767px)').matches) {
     siteLogo.forEach((item) => item.setAttribute('data-mode', 'mobile'));
   }
-  console.log(siteLogo);
 
   siteLogo.forEach((logo) => {
     // get all children "<source>" and "<img>"
