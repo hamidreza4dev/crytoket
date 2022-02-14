@@ -57,7 +57,7 @@ module.exports = {
       settings: {},
       variants: ['responsive', 'hover', 'reduced-motion'],
     }),
-    require('./tailwind-animation-delay'),
-    require('./tailwind-table-padding'),
+    require('./plugins/tailwind-animation-delay'),
+    require('./plugins/tailwind-table-padding'),
   ],
 };

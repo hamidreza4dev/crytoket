@@ -1,6 +1,6 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const allHtmlWebpackPluginFiles = require('./webpack.htmlFiles');
+const allHtmlWebpackPluginFiles = require('./plugins/webpack.htmlFiles');
 
 module.exports = {
   entry: './src/js/app.js',
